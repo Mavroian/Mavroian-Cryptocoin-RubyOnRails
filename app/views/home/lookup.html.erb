@@ -2,8 +2,9 @@
 
 <br/>
 <%= form_tag home_lookup_path, :method => 'POST' do %>
-  <%= text_field_tag 'sym' ,nil, placeholder: 'Enter Crypto Symbol', size: 50%>
-  <%= submit_tag 'Search Stock Quote' %>
+  <%= text_field_tag 'sym' ,nil, class:"form-control", placeholder: 'Enter Crypto Symbol', size: 50%>
+  <br/>
+  <%= submit_tag 'Search Stock Quote' ,class:"btn btn-primary"%>
 <% end %>
 <br/>
 

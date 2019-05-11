@@ -1,1 +1,17 @@
 <h3> Crypto Currency Search</h3>
+
+<br/>
+<%= form_tag home_lookup_path, :method => 'POST' do %>
+  <%= text_field_tag 'sym' ,nil, placeholder: 'Enter Crypto Symbol', size: 50%>
+  <%= submit_tag 'Search Stock Quote' %>
+<% end %>
+<br/>
+
+<%= @symbol%> 
+<% if @symbol%>
+  <%for coin in  @search_coin %>
+    <%if @symbol  ==  coin["symbol"]%>
+     <%= coin["name"]%>: $ <%=coin["quote"]["USD"]["price"]%><br/>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,1 +1,14 @@
 <h1>Hello from Florin</h1>
+
+<br/><br/>
+<%@coins%>
+
+<%for coin in  @coins%>
+    <%for mySymbol in @my_coins%>
+        <%if mySymbol ==  coin["symbol"]%>
+              <%= coin["name"]%>: $ <%=coin["quote"]["USD"]["price"]%><br/>
+              <%end%>
+          <%end%>
+     <%end%>
+<br/><br/>
+<%=@coins[0]["quote"]["USD"]["price"]%>

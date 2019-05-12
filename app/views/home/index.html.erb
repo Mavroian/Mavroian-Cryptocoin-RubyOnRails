@@ -1,13 +1,53 @@
-<h1>Hello from Florin</h1>
+<h1>Top 100 Cryptocurrencies by Market Capitalization</h1>
 
 <br/><br/>
 <%@coins%>
-
-<%for coin in  @coins%>
-    <%for mySymbol in @my_coins%>
-        <%if mySymbol ==  coin["symbol"]%>
-              <%= coin["name"]%>: $ <%=coin["quote"]["USD"]["price"]%><br/>
-              <%end%>
-          <%end%>
-     <%end%>
+<table class="table-bordered" style="width:100%; font-size:20px" >
+    <tr>
+         <th>Rank</th>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Market Cap</th>
+        <th>Price</th>
+        <th>Change(24h)</th>
+       
+    
+   
+    <%for coin in  @coins%>
+     <tr>
+         <td> <%= coin["cmc_rank"]%></td> 
+         <td> <%= coin["symbol"]%></td> 
+        <td> <%= coin["name"]%></td> 
+        <td> $ <%= coin["quote"]["USD"]["market_cap"]%></td>
+        <td> $ <%=coin["quote"]["USD"]["price"]%></td>
+        <td><%= coin["quote"]["USD"]["percent_change_24h"]%></td> 
+       
+    </tr>
+    <%end%>
+    
+</table>
+<p>
+"id"=>1,
+"name"=>"Bitcoin"
+"symbol"=>"BTC" 
+"slug"=>"bitcoin"
+"circulating_supply"=>17695025
+"total_supply"=>17695025
+"max_supply"=>21000000
+"date_added"=>"2013-04-28T00:00:00.000Z"
+"num_market_pairs"=>7428, 
+"tags"=>["mineable"]
+"platform"=>nil
+"cmc_rank"=>1
+"last_updated"=>"2019-05-12T00:51:25.000Z"
+"quote"=>{
+        "USD"=>{
+                "price"=>7058.75651553, 
+                "volume_24h"=>29442940718.1362, 
+                "percent_change_1h"=>-2.91276, 
+                "percent_change_24h"=>10.0151, 
+                "percent_change_7d"=>21.8671, 
+                "market_cap"=>124904873011.21623, 
+                "last_updated"=>"2019-05-12T00:51:25.000Z"
+}}}</p>
 <br/><br/>

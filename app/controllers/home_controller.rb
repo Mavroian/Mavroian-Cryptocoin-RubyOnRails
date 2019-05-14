@@ -1,6 +1,9 @@
 
 class HomeController < ApplicationController
+  before_action :authenticate_user!
+
   def index
+  
   require 'net/http'
   require 'uri'
   require 'json'

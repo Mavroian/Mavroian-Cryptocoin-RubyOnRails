@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ #particles-js {
+  width: 100%;
+  height: 100vh;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,69,1) 35%, rgba(0,212,255,1) 100%);
+}
+.container{
+  height: 100vh
+}
+#loginForm{
+  display: block;
+  position: absolute;
+    z-index: 10;
+    width: 200px;
+    height: 220px;
+    top: 40%;
+    left: 50%;
+    margin: -100px 0 0 -170px;
+    padding: 20px;
+    z-index: 100;
+    
+}

@@ -35,3 +35,9 @@
     z-index: 100;
     
 }
+#alert{
+  background-color: #e3fcfb;
+  color: #a5646f;
+  border-color: #eeccfa;
+  transition-delay: 2s;
+}

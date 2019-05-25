@@ -1,33 +1,29 @@
 
 <% if user_signed_in?%>
-<h1>Top 100 Cryptocurrencies by Market Capitalization</h1>
-
-<br/><br/>
-<%@coins%>
-<table class="table-bordered table table-hover"style="width:100%; font-size:20px" >
-    <tr>
-        <th>Rank</th>
-        <th>Symbol</th>
-        <th>Name</th>
-        <th>Market Cap</th>
-        <th>Price</th>
-        <th>Change(24h)</th>
-     <%for coin in  @coins%>
-     <tr>
-        <td> <%= coin["cmc_rank"]%> </td> 
-        <td> <%= coin["symbol"]%> </td> 
-        <td> <%= coin["name"]%> </td> 
-        <td> $ <%= coin["quote"]["USD"]["market_cap"]%> </td>
-        <td> $ <%=coin["quote"]["USD"]["price"]%></td>
-        <td> <%= coin["quote"]["USD"]["percent_change_24h"]%> </td> 
-    </tr>
-    <% end %>
-    
-</table>
-<% else %>
-
-        <div class="btn-group inline">
-            <%= link_to "Log In" , new_user_session_path , class:"btn btn-primary" %> 
-            <%= link_to "Sign Up" ,new_user_registration_path , class:"btn btn-primary" %>
-        </div>
+	<div id="cryptoTable">
+		<h1>Top 100 Cryptocurrencies by Market Capitalization</h1>
+	<br/><br/>
+	<%@coins%>
+	<div class="table-wrapper-scroll-y my-custom-scrollbar">
+		<table class="table-bordered table table-hover"style="width:100%; font-size:20px" >
+			<tr>
+					<th>Rank</th>
+					<th>Symbol</th>
+					<th>Name</th>
+					<th>Market Cap</th>
+					<th>Price</th>
+					<th>Change(24h)</th>
+			<%for coin in  @coins%>
+			<tr>
+					<td> <%= coin["cmc_rank"]%> </td> 
+					<td> <%= coin["symbol"]%> </td> 
+					<td> <%= coin["name"]%> </td> 
+					<td> $ <%= coin["quote"]["USD"]["market_cap"]%> </td>
+					<td> $ <%=coin["quote"]["USD"]["price"]%></td>
+					<td> <%= coin["quote"]["USD"]["percent_change_24h"]%> </td> 
+			</tr>
+			<% end %>
+			
+		</table>
+	</div>
 <% end %>

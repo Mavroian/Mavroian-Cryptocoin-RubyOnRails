@@ -1,24 +1,24 @@
-
-
-<div  class="panel panel-info">
-  <div class="panel-heading">
-    <h2 class="panel-title">Crypto Currency Search</h2>
-  </div>
-  <div class="panel-body">
-<%= form_tag home_lookup_path, :method => 'POST' do %>
-  <%= text_field_tag 'sym' ,nil, autofocus: true ,class:"form-control", placeholder: 'Enter Crypto Symbol , ex: BTC , ETH ...', size: 50%>
-  <br/>
-  <%= submit_tag 'Search Stock Quote' ,class:"btn btn-primary"%>
-<% end %>
-<br/>
-
-<%= @symbol%> 
-<% if @symbol%>
-  <%for coin in  @search_coin %>
-    <%if @symbol  ==  coin["symbol"]%>
-     <%= coin["name"]%>: $ <%=coin["quote"]["USD"]["price"]%><br/>
+<div class="userForm">
+  <div  class="panel panel-info panelForm">
+      <div class="panel-heading">
+        <h2 class="panel-title">Crypto Currency Search</h2>
+      </div>
+      <div class="panel-body">
+    <%= form_tag home_lookup_path, :method => 'POST' do %>
+      <%= text_field_tag 'sym' ,nil, autofocus: true ,class:"form-control", placeholder: 'Enter Crypto Symbol , ex: BTC , ETH ...', size: 50%>
+      <br/>
+      <%= submit_tag 'Search Stock Quote' ,class:"btn btn-primary"%>
     <% end %>
-  <% end %>
-<% end %>
-</div>
+    <br/>
+
+    <%= @symbol%> 
+    <% if @symbol%>
+      <%for coin in  @search_coin %>
+        <%if @symbol  ==  coin["symbol"]%>
+        <%= coin["name"]%>: $ <%=coin["quote"]["USD"]["price"]%><br/>
+        <% end %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
 </div>

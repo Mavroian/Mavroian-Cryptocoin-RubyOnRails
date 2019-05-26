@@ -18,6 +18,7 @@
 					<%for coin in  @coins%>
 						<tr>
 							<td> <%= coin["cmc_rank"]%> </td> 
+							<% puts inline_svg coin["symbol"] %>
 							<% if !(inline_svg coin["symbol"]).include?("<svg><!-- SVG file not found: '#{coin["symbol"]}' (Try adding .svg to your filename) --></svg>") %>
 								<td><%= inline_svg coin["symbol"] , class:'some-class'  %></td>
 							<%else%>

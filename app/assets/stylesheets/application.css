@@ -23,8 +23,8 @@
   background-color:#e9e3fcb8;
   position: absolute;
   display: block;
- margin-left: 150px;
- margin-right: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .my-custom-scrollbar {
@@ -32,8 +32,8 @@
   height: 600px;
   overflow: auto;
   }
-  .table-wrapper-scroll-y {
-background-color: rgba(149, 228, 223, 0.064);
+.table-wrapper-scroll-y {
+  background-color: rgba(149, 228, 223, 0.064);
   display: block;
   background-color: opacity(75%);
   }
@@ -43,14 +43,14 @@ background-color: rgba(149, 228, 223, 0.064);
 .userForm{
   display: block;
   position: absolute;
-    z-index: 10;
-    width: 200px;
-    height: 220px;
-    top: 40%;
-    left: 50%;
-    margin: -100px 0 0 -170px;
-    padding: 20px;
-    z-index: 100;
+  z-index: 10;
+  width: 200px;
+  height: 220px;
+  top: 40%;
+  left: 50%;
+  margin: -100px 0 0 -170px;
+  padding: 20px;
+  z-index: 100;
     
 }
 #alert{
@@ -58,4 +58,9 @@ background-color: rgba(149, 228, 223, 0.064);
   color: #a5646f;
   border-color: #eeccfa;
   transition-delay: 2s;
+}
+
+.some-class {
+  width: 30px;
+  height: 30px;
 }

@@ -1,10 +1,31 @@
 class CryptosController < ApplicationController
+  
   before_action :set_crypto, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /cryptos
   # GET /cryptos.json
   def index
     @cryptos = Crypto.all
+    require 'net/http'
+    require 'uri'
+    require 'json'
+
+    uri = URI.parse("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest")
+    request = Net::HTTP::Get.new(uri)
+    request["X-Cmc_pro_api_key"] = "e61e9e0d-81b2-4718-805d-863cb7772d19"
+    request["Accept"] = "application/json"
+
+    req_options = {
+      use_ssl: uri.scheme == "https",
+    }
+
+    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+    http.request(request)
+    end
+    
+    @raw = JSON.parse(response.body)
+    @search_crypto = @raw["data"]
+    
   end
 
   # GET /cryptos/1
@@ -71,4 +92,5 @@ class CryptosController < ApplicationController
     def crypto_params
       params.require(:crypto).permit(:symbol, :user_id, :cost_per, :amount_owned)
     end
+    
 end

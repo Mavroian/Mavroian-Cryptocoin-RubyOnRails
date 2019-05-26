@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
   @raw = JSON.parse(response.body)
   @coins = @raw["data"]
-  @my_coins = ["BTC", "XRP", "ADA","ETH" , "XLM","SETTM"]
+  @err = "<svg><!-- SVG file not found: 'NANO' (Try adding .svg to your filename) --></svg>"
   end
 
   def about

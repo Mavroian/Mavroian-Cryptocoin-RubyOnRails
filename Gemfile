@@ -67,3 +67,4 @@ gem 'jquery-rails'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'particles-js-rails'
 gem 'rails_12factor', group: :production
+gem 'inline_svg'

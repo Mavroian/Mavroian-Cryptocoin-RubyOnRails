@@ -1,29 +1,39 @@
 
 <% if user_signed_in?%>
 	<div id="cryptoTable">
-		<h1>Top 100 Cryptocurrencies by Market Capitalization</h1>
-	<br/><br/>
-	<%@coins%>
-	<div class="table-wrapper-scroll-y my-custom-scrollbar">
-		<table class="table-bordered table table-hover"style="width:100%; font-size:20px" >
-			<tr>
-					<th>Rank</th>
-					<th>Symbol</th>
-					<th>Name</th>
-					<th>Market Cap</th>
-					<th>Price</th>
-					<th>Change(24h)</th>
-			<%for coin in  @coins%>
-			<tr>
-					<td> <%= coin["cmc_rank"]%> </td> 
-					<td> <%= coin["symbol"]%> </td> 
-					<td> <%= coin["name"]%> </td> 
-					<td> $ <%= coin["quote"]["USD"]["market_cap"]%> </td>
-					<td> $ <%=coin["quote"]["USD"]["price"]%></td>
-					<td> <%= coin["quote"]["USD"]["percent_change_24h"]%> </td> 
-			</tr>
-			<% end %>
-			
-		</table>
+	<h1>Top 100 Cryptocoin from Market Cap</h1>
+		<div class="table-wrapper-scroll-y my-custom-scrollbar">
+			<table class="table-bordered table table-hover" style="width:100%; font-size:20px" >
+				<thead>
+					<tr> 
+						<th>Rank</th>
+						<th>Symbol</th>
+						<th>Name</th>
+						<th>Market Cap</th>
+						<th>Price</th>
+						<th>Change(24h)</th>
+					</tr>
+				</thead>
+			 	<tbody>
+					<%for coin in  @coins%>
+						<tr>
+							<td> <%= coin["cmc_rank"]%> </td> 
+							<% if !(inline_svg coin["symbol"]).include?("<svg><!-- SVG file not found: '#{coin["symbol"]}' (Try adding .svg to your filename) --></svg>") %>
+								<td><%= inline_svg coin["symbol"] , class:'some-class'  %></td>
+							<%else%>
+								<td><%= inline_svg "nocoin.svg" , class:'some-class'  %></td>
+							<% end %>
+							
+
+							<td> <%= coin["symbol"]%> </td> 
+							<td> $ <%= coin["quote"]["USD"]["market_cap"]%> </td>
+							<td> $ <%=coin["quote"]["USD"]["price"]%></td>
+							<td> <%= coin["quote"]["USD"]["percent_change_24h"]%> </td> 
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 	</div>
 <% end %>
+	

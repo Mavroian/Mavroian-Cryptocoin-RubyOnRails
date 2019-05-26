@@ -25,6 +25,7 @@ class CryptosController < ApplicationController
     
     @raw = JSON.parse(response.body)
     @search_crypto = @raw["data"]
+    @profit_loss = 0
     
   end
 

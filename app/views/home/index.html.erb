@@ -1,7 +1,7 @@
 
 <% if user_signed_in?%>
 	<div id="cryptoTable">
-	<h1>Top 100 Cryptocoin from Market Cap</h1>
+	<h1 style="text-align:center; padding:10px;" >Top 100 Cryptocoin from Market Cap</h1>
 		<div class="table-wrapper-scroll-y my-custom-scrollbar">
 			<table class="table-bordered table table-hover" style="width:100%; font-size:20px" >
 				<thead>
@@ -25,7 +25,7 @@
 							<% end %>
 							
 
-							<td> <%= coin["symbol"]%> </td> 
+							<td> <%= coin["name"]%> </td> 
 							<td> $ <%= coin["quote"]["USD"]["market_cap"]%> </td>
 							<td> $ <%=coin["quote"]["USD"]["price"]%></td>
 							<td> <%= coin["quote"]["USD"]["percent_change_24h"]%> </td> 

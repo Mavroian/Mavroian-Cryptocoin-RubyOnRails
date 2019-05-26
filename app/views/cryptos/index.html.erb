@@ -22,8 +22,8 @@
             <% if crypto.symbol == coin["symbol"] %>
               <tr>
               <td> <%= link_to coin["name"], crypto , method: :get%> </td> 
-              <% if !(inline_svg coin["symbol"]).include?("<svg><!-- SVG file not found: '#{coin["symbol"]}' (Try adding .svg to your filename) --></svg>") %>
-                  <td><%= inline_svg coin["symbol"] , class:'some-class'  %></td>
+              <% if !(inline_svg "#{coin["symbol"]}.svg").include?(" SVG file not found:") %>
+                  <td><%= inline_svg "#{coin["symbol"]}.svg" , class:'some-class'  %></td>
                 <%else%>
                   <td><%= inline_svg "nocoin.svg" , class:'some-class'  %></td>
                 <% end %>
@@ -31,20 +31,25 @@
               <td> $<%= crypto.cost_per %></td>
               <td> <%= crypto.amount_owned %></td>
               <td> $<%= coin["quote"]["USD"]["price"] * crypto.amount_owned %></td>
-              <td> $<%= (coin["quote"]["USD"]["price"] * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned)    %></td>
-              <td><%= link_to 'Delete', crypto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td> $<%= profit_loss =(coin["quote"]["USD"]["price"] * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned)    %></td>
+              <% @profit_loss +=(coin["quote"]["USD"]["price"] * crypto.amount_owned) - (crypto.cost_per * crypto.amount_owned)    %>
+              <td><%=link_to 'Delete', crypto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
               <% end %>
             <% end %>
-        <% end %>
-      <% end %>
+          <% end %>
+       <% end %>
+       
       </tbody>
     </table>
 
     <br>
-
+<br/>
+  <h2>Total Profit/Loss </h2><h3><%= number_to_currency(@profit_loss) %></h3>
+  <br/> <br/>
     
   </div>
+   
   <%= link_to 'New Crypto', new_crypto_path ,method: :get, class:"btn btn-primary"%>
 </div>
 

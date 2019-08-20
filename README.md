@@ -45,10 +45,12 @@ When above setup is completed, you can start the aplication by writing:
 ```
 $ rails server or bin/rails server
 ```
+
 To stop the server use the folowing commands:
- ```
- Ctrl + C or Kill ruby on rails lsof -ti:3000 | xargs kill -9
- ```
+
+```
+Ctrl + C or Kill ruby on rails lsof -ti:3000 | xargs kill -9
+```
 
 ## Built With
 
@@ -60,7 +62,7 @@ To stop the server use the folowing commands:
 - **Create your feature branch** -(git checkout -b my-new-feature)
 - **Commit your changes** -(git commit -am 'Add some feature')
 - **Push to the branch** -(git push origin my-new-feature)
-- **Create new Pull** Request
+- **Create new Pull** Pull Request
 
 ## Technologies Used
 
@@ -72,10 +74,9 @@ To stop the server use the folowing commands:
 
 ## Authors
 
-- **Florin Mavroian**  - [Mavroian](https://www.linkedin.com/in/florin-mavroian/) LinkedIn
+- **Florin Mavroian** - [Mavroian](https://www.linkedin.com/in/florin-mavroian/) LinkedIn
 
 ## Acknowledgments
 
 - [Code Chrysalis](https://www.codechrysalis.io/)
 - [John Elder](https://codemy.com/)
-

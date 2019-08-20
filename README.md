@@ -40,15 +40,15 @@ To run migration use the following command:
 $ rake db:migrate
 ```
 
-```
-$ rails gem
-```
-
 When above setup is completed, you can start the aplication by writing:
 
 ```
 $ rails server or bin/rails server
 ```
+To stop the server use the folowing commands:
+ ```
+ Ctrl + C or Kill ruby on rails lsof -ti:3000 | xargs kill -9
+ ```
 
 ## Built With
 

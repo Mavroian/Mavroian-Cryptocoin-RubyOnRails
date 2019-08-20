@@ -14,16 +14,19 @@ Try it out yourself by [visiting the deployed version](https://crypto-mania.hero
 ### Installing
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Start by forking the repository, clone it to your computer and installing all dependencies using gem.
+Start by forking the repository, clone it to your computer.
 
+Run the following command to install the gems:
+```
+bundle install
+```
 ```
 rails gem
 ```
-```
-When aboce setup is completed, you can start the aplication by writing:
+When above setup is completed, you can start the aplication by writing:
 
 ```
-rails start
+rails server or bin/rails server 
 ```
 
 ## Deployment
@@ -36,7 +39,12 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+*Fork it
+*Create your feature branch (git checkout -b my-new-feature)
+*Commit your changes (git commit -am 'Add some feature')
+*Push to the branch (git push origin my-new-feature)
+*Create new Pull Request
+
 
 ## Technologies Used
 
@@ -47,8 +55,6 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 - [MySql](https://www.mongodb.com/) - For the database
 
 ## Authors
-
-
 * **Florin Mavroian** - *Initial work* - [Mavroian](https://github.com/mavroian)
 
 ## Acknowledgments

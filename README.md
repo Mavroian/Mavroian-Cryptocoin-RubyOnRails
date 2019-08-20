@@ -72,7 +72,7 @@ To stop the server use the folowing commands:
 
 ## Authors
 
-- **Florin Mavroian** - _Initial work_ - [Mavroian](https://github.com/mavroian)
+- **Florin Mavroian**  - [Mavroian](https://www.linkedin.com/in/florin-mavroian/) LinkedIn
 
 ## Acknowledgments
 

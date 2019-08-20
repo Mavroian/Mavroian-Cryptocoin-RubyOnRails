@@ -3,17 +3,6 @@
 * Ruby version  '2.6.3'
 * Rails version  '~> 5.2.3'
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* Deployment instructions
-
-* ...
 # Crypto Mania
 
 Crypto Currency Portfolio app that let's you look up crypto quotes and price information and save it to a database.
@@ -21,30 +10,6 @@ Users can create an account and sign up, log in, add crypto currencies and coins
 
 ## Demo
 Try it out yourself by [visiting the deployed version](https://crypto-mania.herokuapp.com).
-
-#### Front page
-<img src="docs/images/FirstPage.png"
-     alt="first page pic "
-     style=" margin: 10px;" />
-
-#### Select Song Page
-<img src="docs/images/SongPage.png"
-     alt="song page pic "
-     style=" margin: 10px;" />
-
-#### Song Selection
- ![song selection Demo](docs/images/boogie.gif)
-
-#### Dance Page
-<img src="docs/images/DanceWindow.png"
-     alt="Dance page pic "
-     style=" margin: 10px;" />
-
-#### Highscore Page
-<img src="docs/images/HighScore.png"
-     alt="song page pic "
-     style=" margin: 10px;" />
-
 
 ### Installing
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
